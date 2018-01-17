@@ -1,50 +1,46 @@
-import React, { Component } from "react";
-import { Link } from "react-router";
-import { firebaseApp } from "../firebase";
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { firebaseApp } from '../firebase'
 
 export default class SignIn extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       error: {
-        message: ""
+        message: ''
       }
-    };
+    }
   }
 
   signIn() {
-    console.log("this.state", this.state);
-    const { email, password } = this.state;
+    const { email, password } = this.state
     firebaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(error => {
-        console.log("error: ", error);
-        this.setState({ error });
-      });
+      .catch(e => this.setState({ e }))
   }
   render() {
     return (
-      <div className="form-inline" style={{ margin: "5%" }}>
+      <div className="form-inline" style={{ margin: '5%' }}>
         <h2>Sign In</h2>
         <div className="form-group">
           <input
             type="text"
             className="form-control"
             placeholder="email"
-            style={{ marginRight: "5px" }}
+            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ email: e.target.value })}
           />
           <input
             type="password"
             className="form-control"
             placeholder="password"
-            style={{ marginRight: "5px" }}
+            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ password: e.target.value })}
-            onKeyPress={e => {
-              if (e.key === "Enter") this.signIn();
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') this.signIn()
             }}
           />
           <button
@@ -57,9 +53,9 @@ export default class SignIn extends Component {
         </div>
         <div>{this.state.error.message}</div>
         <div>
-          <Link to={"/signup"}>Sign up instead</Link>
+          <Link to={'/signup'}>Sign up instead</Link>
         </div>
       </div>
-    );
+    )
   }
 }

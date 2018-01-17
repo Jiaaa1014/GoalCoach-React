@@ -1,53 +1,50 @@
-import React, { Component } from "react";
-import { Link } from "react-router";
-import { firebaseApp } from "../firebase";
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { firebaseApp } from '../firebase'
 
 export default class SignUp extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       error: {
-        message: ""
+        message: ''
       }
-    };
+    }
   }
 
   signUp() {
-    console.log("this.state", this.state);
-    const { email, password } = this.state;
+    const { email, password } = this.state
     firebaseApp
       .auth()
       .createUserAndRetrieveDataWithEmailAndPassword(email, password)
-      .catch(error => {
-        console.log("error: ", error);
-        this.setState({ error });
-      });
+      .catch(e => this.setState({ e })
+      )
   }
   render() {
     return (
-      <div className="form-inline" style={{ margin: "5%" }}>
+      <div className="form-inline" style={{ margin: '5%' }}>
         <h2>Sign Up</h2>
         <div className="form-group">
           <input
             type="text"
             className="form-control"
             placeholder="email"
-            style={{ marginRight: "5px" }}
+            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ email: e.target.value })}
-            onKeyPress={e => {
-              if (e.key === "Enter") this.signUp();
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') this.signUp()
             }}
           />
           <input
             type="password"
             className="form-control"
             placeholder="password"
-            style={{ marginRight: "5px" }}
+            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ password: e.target.value })}
-            onKeyPress={e => {
-              if (e.key === "Enter") this.signUp();
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') this.signUp()
             }}
           />
 
@@ -61,9 +58,9 @@ export default class SignUp extends Component {
         </div>
         <div>{this.state.error.message}</div>
         <div>
-          <Link to={"/signin"}>Already a user? Sign in instead</Link>
+          <Link to={'/signin'}>Already a user? Sign in instead</Link>
         </div>
       </div>
-    );
+    )
   }
 }

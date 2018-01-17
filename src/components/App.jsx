@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { firebaseApp } from "../firebase";
-import AddGoal from "./AddGoal";
-import GoalList from "./GoalList";
-import CompleteGoalList from "./CompleteGoalList";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { firebaseApp } from '../firebase'
+import AddGoal from './AddGoal'
+import GoalList from './GoalList'
+import CompleteGoalList from './CompleteGoalList'
+
 class App extends Component {
   signOut() {
-    firebaseApp.auth().signOut();
+    firebaseApp.auth().signOut()
   }
   render() {
     return (
-      <div style={{ margin: "5px" }}>
+      <div style={{ margin: '5px' }}>
         <h3>Goals</h3>
         <AddGoal />
         <hr />
@@ -24,13 +25,11 @@ class App extends Component {
           Sign out
         </button>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
-  // console.log("App.jsx", state);
-  return {};
+  return {}
 }
-// 沒有{} 則：mapStateToProps() in Connect(App) must return a plain object. Instead received undefined.
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, null)(App)
