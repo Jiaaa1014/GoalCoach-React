@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { setCompleted } from '../actions'
 import { completeGoalRef } from '../firebase'
 
 class CompleteGoalList extends Component {
   componentDidMount() {
-    completeGoalRef.on('value', snap => {
-      let completeGoals = []
+    completeGoalRef.on('value', (snap) => {
+      const completeGoals = []
       snap.forEach((completeGoal) => {
         const { email, title } = completeGoal.val() // 沒有val()，看起來會是Object{node:{...}, ref:{...}}
         completeGoals.push({ email, title })
@@ -44,5 +45,11 @@ class CompleteGoalList extends Component {
 function mapStateToProps(state) {
   const { completeGoals } = state
   return { completeGoals }
+}
+
+CompleteGoalList.Proptypes = {
+  setCompleted: PropTypes.func,
+  completeGoals: PropTypes.object
+
 }
 export default connect(mapStateToProps, { setCompleted })(CompleteGoalList)
