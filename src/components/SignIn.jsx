@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+
 import { firebaseApp } from '../firebase'
 
 export default class SignIn extends Component {
