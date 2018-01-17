@@ -6,7 +6,8 @@
     },
     "extends": "airbnb",
     "plugins": [
-        "react"
+        "react",
+        "jsx-a11y"
     ],
     "rules": {
         "semi": [
@@ -31,6 +32,17 @@
                 "extensions": [
                     ".js",
                     ".jsx"
+                ]
+            }
+        ],
+        "jsx-a11y/anchor-is-valid": [
+            "off",
+            {
+                "components": [
+                    "Link"
+                ],
+                "specialLink": [
+                    "to"
                 ]
             }
         ]

@@ -5,6 +5,10 @@ import { setCompleted } from '../actions'
 import { completeGoalRef } from '../firebase'
 
 class CompleteGoalList extends Component {
+  static propTypes = {
+    setCompleted: PropTypes.func.isRequired,
+    completeGoals: PropTypes.array.isRequired // eslint-disable-line react/forbid-prop-types
+  }
   componentDidMount() {
     completeGoalRef.on('value', (snap) => {
       const completeGoals = []
@@ -18,8 +22,8 @@ class CompleteGoalList extends Component {
   cleanCompleted() {
     completeGoalRef.set({})
   }
+
   render() {
-    // console.log('this.props.completeGoals', this.props.completeGoals)
     return (
       <div>
         {this.props.completeGoals.map((completeGoal, i) => {
@@ -42,14 +46,10 @@ class CompleteGoalList extends Component {
     )
   }
 }
+
 function mapStateToProps(state) {
   const { completeGoals } = state
   return { completeGoals }
 }
 
-CompleteGoalList.Proptypes = {
-  setCompleted: PropTypes.func,
-  completeGoals: PropTypes.object
-
-}
 export default connect(mapStateToProps, { setCompleted })(CompleteGoalList)

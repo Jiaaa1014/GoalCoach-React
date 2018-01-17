@@ -65,9 +65,7 @@ componentDidMount() {
   });
 }
 ```
-
-
-Completed
+5. if completed things, do the same way as pre step. 
 ```js
 // CompleteGoalList.jsx
 componentDidMount() {
@@ -81,4 +79,25 @@ componentDidMount() {
     this.props.setCompleted(completeGoals);
   });
 }
+```
+
+###### Change `setState({ e })` `setState({ ...e })`
+```js
+// SignIn.jsx
+  signIn() {
+    const { email, password } = this.state
+    firebaseApp
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch(e => this.setState({ ...e }))
+  }
+```
+```js
+signUp() {
+    const { email, password } = this.state
+    firebaseApp
+      .auth()
+      .createUserAndRetrieveDataWithEmailAndPassword(email, password)
+      .catch(e => this.setState({ ...e }))
+  }
 ```

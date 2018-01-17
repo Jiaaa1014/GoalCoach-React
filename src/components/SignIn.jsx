@@ -20,7 +20,7 @@ export default class SignIn extends Component {
     firebaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(e => this.setState({ e }))
+      .catch(e => this.setState({ ...e }))
   }
   render() {
     return (
@@ -54,7 +54,7 @@ export default class SignIn extends Component {
         </div>
         <div>{this.state.error.message}</div>
         <div>
-          <Link to={'/signup'}>Sign up instead</Link>
+          <Link to="/signup">Sign up instead</Link>
         </div>
       </div>
     )
