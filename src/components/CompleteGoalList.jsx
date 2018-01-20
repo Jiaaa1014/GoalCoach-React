@@ -13,7 +13,7 @@ class CompleteGoalList extends Component {
     completeGoalRef.on('value', (snap) => {
       const completeGoals = []
       snap.forEach((completeGoal) => {
-        const { email, title } = completeGoal.val() // 沒有val()，看起來會是Object{node:{...}, ref:{...}}
+        const { email, title } = completeGoal.val()
         completeGoals.push({ email, title })
       })
       this.props.setCompleted(completeGoals)

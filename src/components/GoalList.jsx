@@ -8,7 +8,7 @@ import GoalItem from './GoalItem'
 class GoalList extends Component {
   static propTypes = {
     setGoals: PropTypes.func.isRequired,
-    goals: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+    goals: PropTypes.array.isRequired // eslint-disable-line react/forbid-prop-types
   }
   componentDidMount() {
     goalRef.on('value', (snap) => {

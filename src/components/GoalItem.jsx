@@ -5,9 +5,9 @@ import { completeGoalRef, goalRef } from '../firebase'
 
 class GoalItem extends Component {
   static propTypes = {
-    email: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    serverKey: PropTypes.string.isRequired,
+    email: PropTypes.string,
+    title: PropTypes.string,
+    serverKey: PropTypes.string,
     user: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
     goal: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
   }

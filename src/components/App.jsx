@@ -6,6 +6,7 @@ import GoalList from './GoalList'
 import CompleteGoalList from './CompleteGoalList'
 
 class App extends Component {
+
   signOut() {
     firebaseApp.auth().signOut()
   }
