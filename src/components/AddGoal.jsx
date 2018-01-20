@@ -8,7 +8,6 @@ class AddGoal extends Component {
     email: PropTypes.string,
     user: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
   }
-
   constructor(props) {
     super(props)
     this.state = {

@@ -22,9 +22,9 @@ class GoalItem extends Component {
 
     return (
       <div style={{ margin: '5px' }}>
-        <strong>{title}</strong>
+        <strong>{`${title} `}</strong>
         <span>
-          submitted by <em>{email}</em>
+          submitted by<em>{`－${email}`}</em>
         </span>
         <button
           className="btn btn-primary btn-sm"
@@ -39,7 +39,6 @@ class GoalItem extends Component {
 
 function mapStateToProps(state) {
   const { user } = state
-  console.log('GoalItem', state)
   return { user }
 }
 
