@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Router, Route, browserHistory } from 'react-router'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
 import { firebaseApp } from './firebase'
 
 import { logUser } from './actions'

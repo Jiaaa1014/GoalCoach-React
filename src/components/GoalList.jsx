@@ -14,7 +14,7 @@ class GoalList extends Component {
     goalRef.on('value', (snap) => {
       const goals = []
       snap.forEach((goal) => {
-        const { email, title } = goal.val() // 沒有val()，看起來會是Object{node:{...}, ref:{...}}
+        const { email, title } = goal.val()
         const serverKey = goal.ref.path.pieces_[1]
         goals.push({ email, title, serverKey })
       })

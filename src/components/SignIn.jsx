@@ -20,7 +20,7 @@ export default class SignIn extends Component {
     firebaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: error.message }))
   }
   render() {
     return (

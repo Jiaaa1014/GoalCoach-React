@@ -19,7 +19,7 @@ export default class SignUp extends Component {
     firebaseApp
       .auth()
       .createUserAndRetrieveDataWithEmailAndPassword(email, password)
-      .catch(e => this.setState({ error: e }))
+      .catch(error => this.setState({ error }))
   }
   render() {
     return (
