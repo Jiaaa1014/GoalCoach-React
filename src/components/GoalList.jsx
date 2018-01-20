@@ -35,6 +35,7 @@ class GoalList extends Component {
 }
 function mapStateToProps(state) {
   const { goals } = state
+  console.log('GoalList', state)
   return { goals }
 }
 export default connect(mapStateToProps, { setGoals })(GoalList)

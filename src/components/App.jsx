@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import { firebaseApp } from '../firebase'
 import AddGoal from './AddGoal'
 import GoalList from './GoalList'
 import CompleteGoalList from './CompleteGoalList'
 
 class App extends Component {
-
   signOut() {
     firebaseApp.auth().signOut()
   }
@@ -30,7 +29,7 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {}
-}
-export default connect(mapStateToProps, null)(App)
+// function mapStateToProps() {
+//   return {}
+// }
+export default App

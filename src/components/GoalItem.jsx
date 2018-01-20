@@ -39,6 +39,7 @@ class GoalItem extends Component {
 
 function mapStateToProps(state) {
   const { user } = state
+  console.log('GoalItem', state)
   return { user }
 }
 

@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { goalRef } from '../firebase'
 
 class AddGoal extends Component {
+  static propTypes = {
+    email: PropTypes.string,
+    user: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  }
+
   constructor(props) {
     super(props)
     this.state = {
