@@ -1,11 +1,3 @@
-$colors:(btnOut: #f5ccca, btnInUp: #fff, btnAdd: #8fc866, btnDone: #3a7f91, btnClean:#e76d6d);
-@each $button,
-$color in $colors {
-    .#{$button} {
-        --color: #{$color};
-    }
-}
-
 .btnInUp,
 .btnOut,
 .btnAdd,
@@ -13,17 +5,17 @@ $color in $colors {
 .btnClean {
     background: none;
     color: var(--color);
-    opacity: 1;
-    border: 1.5px solid;
-    border-radius: 2px;
-    font-weight: 800;
+    opacity: .7;
+    border: 3.5px solid;
+    border-radius: 6px;
+    font-weight: 700;
     margin: 1.5rem;
-    padding: 1rem 3rem;
+    padding: .5rem 3rem;
     box-shadow: 0 .5em 1em -.3em rgba(#fff, .3);
-    transition: all .2s ease;
+    transition: all .1s ease;
     &:active {
         transform: translateY(.2em);
-        box-shadow: inset 0em 0.1em .4em 0 var(--color), 0 0.6em .5em -.7em var(--color);
+        box-shadow: inset 0em 0.1em .1em 0 var(--color), 0 0.6em .5em -.7em var(--color);
         color: var(--color);
         opacity: 1
     }
@@ -31,11 +23,22 @@ $color in $colors {
 
 .btnInUp {
     padding: 1rem 10rem;
+    @media (max-width: 576px) {
+        width: 100%;
+    }
     &:active {
-        box-shadow: inset 0em 0.1em .4em 0 #ffffff, 0 0.6em .5em -.7em #fff;
+        box-shadow: inset 0em 0.1em .1em 0 #ffffff, 0 0.6em .5em -.7em #fff;
     }
 }
 
 .btnDone {
-    padding: .5rem 3rem
+    padding: .1rem 2rem
+}
+
+$colors:(btnOut: #f5ccca, btnInUp: #fff, btnAdd: #8fc866, btnDone: #3a7f91, btnClean:#e76d6d);
+@each $button,
+$color in $colors {
+    .#{$button} {
+        --color: #{$color};
+    }
 }

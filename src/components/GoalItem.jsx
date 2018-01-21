@@ -22,8 +22,8 @@ class GoalItem extends Component {
 
     return (
       <div>
-        <strong>{`${title} `}</strong>
-        <span>
+        <span className="item-name">{`${title} `}</span>
+        <span className="item-who">
           submitted by<em>{`－${email}`}</em>
         </span>
         <button

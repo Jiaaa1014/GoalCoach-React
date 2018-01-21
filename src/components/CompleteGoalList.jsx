@@ -30,7 +30,8 @@ class CompleteGoalList extends Component {
           const { title, email } = completeGoal
           return (
             <div key={i}>
-              <strong>{title}</strong> completed by <em>{email}</em>
+              <span className="item-name">{`${title} `}</span>
+              <span className="item-who">completed by <em>{`－${email}`}</em></span>
             </div>
           )
         })}

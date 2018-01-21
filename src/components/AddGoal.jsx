@@ -37,8 +37,8 @@ class AddGoal extends Component {
           <button
             type="button"
             className="btnAdd"
-            onClick={(e) => {
-              if (e.target.value) this.addGoal()
+            onClick={() => {
+              if (this.state.title) this.addGoal()
             }}
           >
             Add it

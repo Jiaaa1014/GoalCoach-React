@@ -1,3 +1,39 @@
+.btnInUp,
+.btnOut,
+.btnAdd,
+.btnDone,
+.btnClean {
+  background: none;
+  color: var(--color);
+  opacity: .7;
+  border: 3.5px solid;
+  border-radius: 6px;
+  font-weight: 700;
+  margin: 1.5rem;
+  padding: .5rem 3rem;
+  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);
+  transition: all .1s ease; }
+  .btnInUp:active,
+  .btnOut:active,
+  .btnAdd:active,
+  .btnDone:active,
+  .btnClean:active {
+    transform: translateY(0.2em);
+    box-shadow: inset 0em 0.1em 0.1em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);
+    color: var(--color);
+    opacity: 1; }
+
+.btnInUp {
+  padding: 1rem 10rem; }
+  @media (max-width: 576px) {
+    .btnInUp {
+      width: 100%; } }
+  .btnInUp:active {
+    box-shadow: inset 0em 0.1em .1em 0 #ffffff, 0 0.6em .5em -.7em #fff; }
+
+.btnDone {
+  padding: .1rem 2rem; }
+
 .btnOut {
   --color: #f5ccca; }
 
@@ -13,49 +49,27 @@
 .btnClean {
   --color: #e76d6d; }
 
-.btnInUp,
-.btnOut,
-.btnAdd,
-.btnDone,
-.btnClean {
-  background: none;
-  color: var(--color);
-  opacity: 1;
-  border: 1.5px solid;
-  border-radius: 2px;
-  font-weight: 800;
-  margin: 1.5rem;
-  padding: 1rem 3rem;
-  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);
-  transition: all .2s ease; }
-  .btnInUp:active,
-  .btnOut:active,
-  .btnAdd:active,
-  .btnDone:active,
-  .btnClean:active {
-    transform: translateY(0.2em);
-    box-shadow: inset 0em 0.1em 0.4em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);
-    color: var(--color);
-    opacity: 1; }
-
-.btnInUp {
-  padding: 1rem 10rem; }
-  .btnInUp:active {
-    box-shadow: inset 0em 0.1em .4em 0 #ffffff, 0 0.6em .5em -.7em #fff; }
-
-.btnDone {
-  padding: .5rem 3rem; }
-
 body {
   background-color: #1C1C1C;
   color: #fff; }
+
+h1,
+h2 {
+  font-size: 4em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: #999 solid 1px; }
+
+h1 {
+  border-bottom: none; }
 
 .box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
-  width: 100%; }
+  margin: 10% auto;
+  width: 80%; }
   .box hr {
     width: 100%;
     border: 1px #fff solid; }
@@ -67,11 +81,6 @@ body {
     .box .err a,
     .box .in a {
       font-size: 1em; }
-
-.listbox {
-  display: flex;
-  flex-direction: column;
-  margin: 5%; }
 
 .user {
   display: flex;
@@ -98,10 +107,25 @@ body {
     .box .in div {
       display: none; } }
 
+/* App.jsx */
+.listbox {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 10%; }
+
+/* App.jsx */
 /* AddGoal */
 .add-item {
-  display: inline;
-  width: 50%;
-  max-width: 600px; }
+  width: 60%;
+  max-width: 900px; }
 
 /* AddGoal */
+/* GoalItem & CompleteGoalList*/
+.item-name {
+  font: 800 3rem 'Marcellus SC', serif; }
+
+.item-who {
+  font: .7rem;
+  color: #999; }
+
+/* GoalItem & CompleteGoalList*/

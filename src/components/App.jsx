@@ -12,13 +12,13 @@ class App extends Component {
   render() {
     return (
       <div className="listbox">
-        <h2>Goals</h2>
+        <h1>Make a Goals</h1>
         <AddGoal />
         <hr />
-        <h3>Goals to Be Done</h3>
+        <h2>Hey, Finish it!</h2>
         <GoalList />
         <hr />
-        <h3>Already Completed</h3>
+        <h2>Already Completed</h2>
         <CompleteGoalList />
         <hr />
         <button className="btnOut" onClick={() => this.signOut()}>
