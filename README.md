@@ -1,4 +1,4 @@
-### Steps
+# Steps
 1. Download ZIP and unzip it
 2. Open cmd 
 ```bash
@@ -9,7 +9,7 @@
 ###### or
 2. Right click and choose the `Git Bash` at the project directory
 
-### Notes
+## Notes
 ###### firebase.js
 ```js
 firebaseApp.auth().onAuthStateChanged(user => {
@@ -81,23 +81,54 @@ componentDidMount() {
 }
 ```
 
-###### Change `setState({ e })` `setState({ ...e })`
 ```js
 // SignIn.jsx
-  signIn() {
-    const { email, password } = this.state
-    firebaseApp
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch(e => this.setState({ ...e }))
-  }
+signIn() {
+  const { email, password } = this.state
+  firebaseApp
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(error => this.setState({ error: error.message }))
+}
 ```
 ```js
+// SignUp.jsx
 signUp() {
-    const { email, password } = this.state
-    firebaseApp
-      .auth()
-      .createUserAndRetrieveDataWithEmailAndPassword(email, password)
-      .catch(e => this.setState({ ...e }))
-  }
+  const { email, password } = this.state
+  firebaseApp
+    .auth()
+    .createUserAndRetrieveDataWithEmailAndPassword(email, password)
+    .catch(error => this.setState({ error }))
+}
 ```
+
+
+## Bug Fixed
+
+After `npm run eject`, there's bunch of dependencies show up. 
+
+When using `webpack` I got the error about 
+```
+Module build failed: Error: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. 
+```
+Go to the \node_modules\babel-preset-react-app\index.js"
+and add these two variables
+```js
+process.env.BABEL_ENV = 'development';
+process.env.NODE_ENV = 'development';
+```
+
+---
+
+How to let .scss work?
+```shell
+$ npm i sass-loader node-sass -S
+```
+`webpack.config.js`
+```js
+{
+  test: /\.scss$/,
+  loader: 'style-loader!css-loader!sass-loader'
+}
+```
+webpack successfully works but the page is still numb?

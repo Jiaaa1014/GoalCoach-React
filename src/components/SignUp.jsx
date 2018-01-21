@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { firebaseApp } from '../firebase'
+import '../styling/css/SignUp.css'
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class SignUp extends Component {
   }
   render() {
     return (
-      <div className="form-inline" style={{ margin: '5%' }}>
+      <div className="form-inline box" style={{ margin: '5%' }}>
         <h2>Sign Up</h2>
         <div className="form-group">
           <input

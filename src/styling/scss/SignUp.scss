@@ -1,0 +1,9 @@
+.box {
+  background: #555;
+  color:red;
+  input {
+    color:blue
+    &:hover{
+     width: 300px;}
+  }
+}

@@ -10,6 +10,7 @@ class GoalList extends Component {
     setGoals: PropTypes.func.isRequired,
     goals: PropTypes.array.isRequired // eslint-disable-line react/forbid-prop-types
   }
+  /* eslint-disable */
   componentDidMount() {
     goalRef.on('value', (snap) => {
       const goals = []
