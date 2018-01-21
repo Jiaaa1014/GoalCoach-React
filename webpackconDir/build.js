@@ -8946,7 +8946,7 @@ var RepoManager = /** @class */ (function () {
         if (dbUrl === undefined) {
             util_2.fatal("Can't determine Firebase Database URL.  Be sure to include " +
                 DATABASE_URL_OPTION +
-                ' option when calling firebase.initializeApp().');
+                ' option when calling firebase.intializeApp().');
         }
         var parsedUrl = parser_1.parseRepoInfo(dbUrl);
         var repoInfo = parsedUrl.repoInfo;
@@ -41711,7 +41711,7 @@ function createFirebaseNamespace() {
         app: app,
         apps: null,
         Promise: Promise,
-        SDK_VERSION: '4.8.2',
+        SDK_VERSION: '4.8.1',
         INTERNAL: {
             registerService: registerService,
             createFirebaseNamespace: createFirebaseNamespace,
@@ -53043,14 +53043,14 @@ var App = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { style: { margin: '5px' }, __source: {
+        { className: 'listbox', __source: {
             fileName: _jsxFileName,
             lineNumber: 14
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h3',
+          'h2',
           {
             __source: {
               fileName: _jsxFileName,
@@ -53075,7 +53075,7 @@ var App = function (_Component) {
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h4',
+          'h3',
           {
             __source: {
               fileName: _jsxFileName,
@@ -53100,7 +53100,7 @@ var App = function (_Component) {
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h4',
+          'h3',
           {
             __source: {
               fileName: _jsxFileName,
@@ -53126,7 +53126,7 @@ var App = function (_Component) {
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { className: 'btn btn-danger', onClick: function onClick() {
+          { className: 'btnOut', onClick: function onClick() {
               return _this2.signOut();
             }, __source: {
               fileName: _jsxFileName,
@@ -53213,7 +53213,7 @@ var AddGoal = function (_Component) {
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'form-group', __source: {
+          { className: 'form-group add-item', __source: {
               fileName: _jsxFileName,
               lineNumber: 25
             },
@@ -53223,12 +53223,11 @@ var AddGoal = function (_Component) {
             type: 'text',
             placeholder: 'Add a Goal',
             className: 'form-control',
-            style: { marginRight: '5px' },
             onChange: function onChange(e) {
               _this2.setState({ title: e.target.value });
             },
             onKeyPress: function onKeyPress(e) {
-              if (e.key === 'Enter') _this2.addGoal();
+              if (e.key === 'Enter' && e.target.value) _this2.addGoal();
             },
             __source: {
               fileName: _jsxFileName,
@@ -53240,13 +53239,13 @@ var AddGoal = function (_Component) {
             'button',
             {
               type: 'button',
-              className: 'btn btn-success',
-              onClick: function onClick() {
-                return _this2.addGoal();
+              className: 'btnAdd',
+              onClick: function onClick(e) {
+                if (e.target.value) _this2.addGoal();
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 38
+                lineNumber: 37
               },
               __self: this
             },
@@ -53431,7 +53430,8 @@ var GoalItem = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { style: { margin: '5px' }, __source: {
+        {
+          __source: {
             fileName: _jsxFileName,
             lineNumber: 24
           },
@@ -53473,7 +53473,7 @@ var GoalItem = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           {
-            className: 'btn btn-primary btn-sm',
+            className: 'btnDone',
             onClick: function onClick() {
               return _this2.completeGoal();
             },
@@ -53622,7 +53622,7 @@ var CompleteGoalList = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           {
-            className: 'btn btn-secondary',
+            className: 'btnClean',
             onClick: function onClick() {
               _this3.cleanCompleted();
             },
@@ -53707,7 +53707,7 @@ var SignIn = function (_Component) {
           password = _state.password;
 
       __WEBPACK_IMPORTED_MODULE_2__firebase__["b" /* firebaseApp */].auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        return _this2.setState({ error: error.message });
+        return _this2.setState({ error: error });
       });
     }
   }, {
@@ -53717,14 +53717,14 @@ var SignIn = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'form-inline', style: { margin: '5%' }, __source: {
+        { className: 'box', __source: {
             fileName: _jsxFileName,
             lineNumber: 27
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h2',
+          'h1',
           {
             __source: {
               fileName: _jsxFileName,
@@ -53736,7 +53736,7 @@ var SignIn = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'form-group', __source: {
+          { className: 'form-group user', __source: {
               fileName: _jsxFileName,
               lineNumber: 29
             },
@@ -53744,9 +53744,8 @@ var SignIn = function (_Component) {
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
             type: 'text',
-            className: 'form-control',
+            className: 'form-control user-typing',
             placeholder: 'email',
-            style: { marginRight: '5px' },
             onChange: function onChange(e) {
               return _this3.setState({ email: e.target.value });
             },
@@ -53758,9 +53757,8 @@ var SignIn = function (_Component) {
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
             type: 'password',
-            className: 'form-control',
+            className: 'form-control user-typing',
             placeholder: 'password',
-            style: { marginRight: '5px' },
             onChange: function onChange(e) {
               return _this3.setState({ password: e.target.value });
             },
@@ -53769,7 +53767,7 @@ var SignIn = function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 36
             },
             __self: this
           }),
@@ -53777,13 +53775,13 @@ var SignIn = function (_Component) {
             'button',
             {
               type: 'button',
-              className: 'btn btn-primary',
+              className: 'btnInUp',
               onClick: function onClick() {
                 return _this3.signIn();
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 47
+                lineNumber: 45
               },
               __self: this
             },
@@ -53795,21 +53793,39 @@ var SignIn = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 53
             },
             __self: this
           },
           this.state.error.message
         ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54
+          },
+          __self: this
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 56
+              lineNumber: 55
             },
             __self: this
           },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 56
+              },
+              __self: this
+            },
+            'New invistor?'
+          ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_router__["a" /* Link */],
             { to: '/signup', __source: {
@@ -53818,9 +53834,16 @@ var SignIn = function (_Component) {
               },
               __self: this
             },
-            'Sign up instead'
+            'Join us'
           )
-        )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59
+          },
+          __self: this
+        })
       );
     }
   }]);
@@ -53894,14 +53917,14 @@ var SignUp = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'form-inline box', style: { margin: '5%' }, __source: {
+        { className: 'box', __source: {
             fileName: _jsxFileName,
             lineNumber: 27
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h2',
+          'h1',
           {
             __source: {
               fileName: _jsxFileName,
@@ -53909,11 +53932,11 @@ var SignUp = function (_Component) {
             },
             __self: this
           },
-          'Sign Up'
+          ' Hey, NewComer'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'form-group', __source: {
+          { className: 'form-group user', __source: {
               fileName: _jsxFileName,
               lineNumber: 29
             },
@@ -53921,9 +53944,8 @@ var SignUp = function (_Component) {
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
             type: 'text',
-            className: 'form-control',
+            className: 'form-control user-typing',
             placeholder: 'email',
-            style: { marginRight: '5px' },
             onChange: function onChange(e) {
               return _this3.setState({ email: e.target.value });
             },
@@ -53938,9 +53960,8 @@ var SignUp = function (_Component) {
           }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
             type: 'password',
-            className: 'form-control',
+            className: 'form-control user-typing',
             placeholder: 'password',
-            style: { marginRight: '5px' },
             onChange: function onChange(e) {
               return _this3.setState({ password: e.target.value });
             },
@@ -53949,7 +53970,7 @@ var SignUp = function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 40
+              lineNumber: 39
             },
             __self: this
           }),
@@ -53957,13 +53978,13 @@ var SignUp = function (_Component) {
             'button',
             {
               type: 'button',
-              className: 'btn btn-primary',
+              className: 'btnInUp',
               onClick: function onClick() {
                 return _this3.signUp();
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 51
+                lineNumber: 49
               },
               __self: this
             },
@@ -53972,24 +53993,39 @@ var SignUp = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          {
-            __source: {
+          { className: 'err', __source: {
               fileName: _jsxFileName,
-              lineNumber: 59
+              lineNumber: 57
             },
             __self: this
           },
           this.state.error.message
         ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'block', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          },
+          __self: this
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          {
-            __source: {
+          { className: 'in', __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 59
             },
             __self: this
           },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 60
+              },
+              __self: this
+            },
+            'Already a user? '
+          ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1_react_router__["a" /* Link */],
             { to: '/signin', __source: {
@@ -53998,9 +54034,15 @@ var SignUp = function (_Component) {
               },
               __self: this
             },
-            'Already a user? Sign in instead'
+            'Sign in instead'
           )
-        )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', { className: 'block', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
+          },
+          __self: this
+        })
       );
     }
   }]);
@@ -54050,7 +54092,7 @@ exports = module.exports = __webpack_require__(300)(undefined);
 
 
 // module
-exports.push([module.i, ".box {\n  background: #555;\n  color: pink; }\n  color:blue\n.box input:hover {\n    width: 300px; }\n", ""]);
+exports.push([module.i, ".btnOut {\n  --color: #f5ccca; }\n\n.btnInUp {\n  --color: #fff; }\n\n.btnAdd {\n  --color: #8fc866; }\n\n.btnDone {\n  --color: #3a7f91; }\n\n.btnClean {\n  --color: #e76d6d; }\n\n.btnInUp,\n.btnOut,\n.btnAdd,\n.btnDone,\n.btnClean {\n  background: none;\n  color: var(--color);\n  opacity: 1;\n  border: 1.5px solid;\n  border-radius: 2px;\n  font-weight: 800;\n  margin: 1.5rem;\n  padding: 1rem 3rem;\n  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);\n  transition: all .2s ease; }\n  .btnInUp:active,\n  .btnOut:active,\n  .btnAdd:active,\n  .btnDone:active,\n  .btnClean:active {\n    transform: translateY(0.2em);\n    box-shadow: inset 0em 0.1em 0.4em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);\n    color: var(--color);\n    opacity: 1; }\n\n.btnInUp {\n  padding: 1rem 10rem; }\n  .btnInUp:active {\n    box-shadow: inset 0em 0.1em .4em 0 #ffffff, 0 0.6em .5em -.7em #fff; }\n\n.btnDone {\n  padding: .5rem 3rem; }\n\nbody {\n  background-color: #1C1C1C;\n  color: #fff; }\n\n.box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: auto;\n  width: 100%; }\n  .box hr {\n    width: 100%;\n    border: 1px #fff solid; }\n  .box .err,\n  .box .in {\n    color: #eee;\n    margin: 5px;\n    text-align: center; }\n    .box .err a,\n    .box .in a {\n      font-size: 1em; }\n\n.listbox {\n  display: flex;\n  flex-direction: column;\n  margin: 5%; }\n\n.user {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: auto;\n  width: 90%; }\n  .user .user-typing {\n    margin: 0.8rem;\n    max-width: 400px;\n    border-radius: 2%; }\n\n@media (max-width: 575px) {\n  hr {\n    display: none; }\n  .box {\n    margin-top: 5%;\n    width: 70%; }\n    .box .user {\n      width: 100%; }\n      .box .user .btnInOut {\n        width: 100%;\n        padding: 0px; }\n    .box .in div {\n      display: none; } }\n\n/* AddGoal */\n.add-item {\n  display: inline;\n  width: 50%;\n  max-width: 600px; }\n\n/* AddGoal */\n", ""]);
 
 // exports
 
