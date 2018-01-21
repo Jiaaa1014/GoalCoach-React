@@ -1,6 +1,107 @@
+.btnOut {
+  --color: #f5ccca; }
+
+.btnInUp {
+  --color: #fff; }
+
+.btnAdd {
+  --color: #8fc866; }
+
+.btnDone {
+  --color: #3a7f91; }
+
+.btnClean {
+  --color: #e76d6d; }
+
+.btnInUp,
+.btnOut,
+.btnAdd,
+.btnDone,
+.btnClean {
+  background: none;
+  color: var(--color);
+  opacity: 1;
+  border: 1.5px solid;
+  border-radius: 2px;
+  font-weight: 800;
+  margin: 1.5rem;
+  padding: 1rem 3rem;
+  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);
+  transition: all .2s ease; }
+  .btnInUp:active,
+  .btnOut:active,
+  .btnAdd:active,
+  .btnDone:active,
+  .btnClean:active {
+    transform: translateY(0.2em);
+    box-shadow: inset 0em 0.1em 0.4em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);
+    color: var(--color);
+    opacity: 1; }
+
+.btnInUp {
+  padding: 1rem 10rem; }
+  .btnInUp:active {
+    box-shadow: inset 0em 0.1em .4em 0 #ffffff, 0 0.6em .5em -.7em #fff; }
+
+.btnDone {
+  padding: .5rem 3rem; }
+
+body {
+  background-color: #1C1C1C;
+  color: #fff; }
+
 .box {
-  background: #555;
-  color: pink; }
-  color:blue
-.box input:hover {
-    width: 300px; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 100%; }
+  .box hr {
+    width: 100%;
+    border: 1px #fff solid; }
+  .box .err,
+  .box .in {
+    color: #eee;
+    margin: 5px;
+    text-align: center; }
+    .box .err a,
+    .box .in a {
+      font-size: 1em; }
+
+.listbox {
+  display: flex;
+  flex-direction: column;
+  margin: 5%; }
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 90%; }
+  .user .user-typing {
+    margin: 0.8rem;
+    max-width: 400px;
+    border-radius: 2%; }
+
+@media (max-width: 575px) {
+  hr {
+    display: none; }
+  .box {
+    margin-top: 5%;
+    width: 70%; }
+    .box .user {
+      width: 100%; }
+      .box .user .btnInOut {
+        width: 100%;
+        padding: 0px; }
+    .box .in div {
+      display: none; } }
+
+/* AddGoal */
+.add-item {
+  display: inline;
+  width: 50%;
+  max-width: 600px; }
+
+/* AddGoal */

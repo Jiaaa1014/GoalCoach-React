@@ -22,23 +22,24 @@ class AddGoal extends Component {
   render() {
     return (
       <div className="form-inline">
-        <div className="form-group">
+        <div className="form-group add-item">
           <input
             type="text"
             placeholder="Add a Goal"
             className="form-control"
-            style={{ marginRight: '5px' }}
             onChange={(e) => {
               this.setState({ title: e.target.value })
             }}
             onKeyPress={(e) => {
-              if (e.key === 'Enter') this.addGoal()
+              if (e.key === 'Enter' && e.target.value) this.addGoal()
             }}
           />
           <button
             type="button"
-            className="btn btn-success"
-            onClick={() => this.addGoal()}
+            className="btnAdd"
+            onClick={(e) => {
+              if (e.target.value) this.addGoal()
+            }}
           >
             Add it
           </button>

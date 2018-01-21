@@ -24,14 +24,13 @@ export default class SignUp extends Component {
   }
   render() {
     return (
-      <div className="form-inline box" style={{ margin: '5%' }}>
-        <h2>Sign Up</h2>
-        <div className="form-group">
+      <div className="box">
+        <h1> Hey, NewComer</h1>
+        <div className="form-group user">
           <input
             type="text"
-            className="form-control"
+            className="form-control user-typing"
             placeholder="email"
-            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ email: e.target.value })}
             onKeyPress={(e) => {
               if (e.key === 'Enter') this.signUp()
@@ -39,9 +38,8 @@ export default class SignUp extends Component {
           />
           <input
             type="password"
-            className="form-control"
+            className="form-control user-typing"
             placeholder="password"
-            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ password: e.target.value })}
             onKeyPress={(e) => {
               if (e.key === 'Enter') this.signUp()
@@ -50,16 +48,19 @@ export default class SignUp extends Component {
 
           <button
             type="button"
-            className="btn btn-primary"
+            className="btnInUp"
             onClick={() => this.signUp()}
           >
             Sign Up
           </button>
         </div>
-        <div>{this.state.error.message}</div>
-        <div>
-          <Link to="/signin">Already a user? Sign in instead</Link>
+        <div className="err">{this.state.error.message}</div>
+        <hr className="block" />
+        <div className="in">
+          <div>Already a user? </div>
+          <Link to="/signin">Sign in instead</Link>
         </div>
+        <hr className="block" />
       </div>
     )
   }

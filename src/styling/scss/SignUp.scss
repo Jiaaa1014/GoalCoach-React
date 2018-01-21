@@ -1,9 +1,77 @@
-.box {
-  background: #555;
-  color:red;
-  input {
-    color:blue
-    &:hover{
-     width: 300px;}
-  }
+@import './btn';
+body {
+    background-color: #1C1C1C;
+    color: #fff
 }
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    hr {
+        width: 100%;
+        border: 1px #fff solid
+    }
+    .err,
+    .in {
+        color: #eee;
+        margin: 5px;
+        text-align: center;
+        a {
+            font-size: 1em
+        }
+    }
+}
+
+.listbox {
+    display: flex;
+    flex-direction: column;
+    margin: 5%
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    .user-typing {
+        margin: 0.8rem;
+        max-width: 400px;
+        border-radius: 2%
+    }
+}
+
+@media (max-width: 575px) {
+    hr {
+        display: none
+    }
+    .box {
+        margin-top: 5%;
+        width: 70%;
+        .user {
+            width: 100%;
+            .btnInOut {
+                width: 100%;
+                padding: 0px;
+            }
+        }
+        .in div {
+            display: none
+        }
+    }
+}
+
+
+/* AddGoal */
+
+.add-item {
+    display: inline;
+    width: 50%;
+    max-width: 600px;
+}
+
+
+/* AddGoal */

@@ -35,7 +35,7 @@ class CompleteGoalList extends Component {
           )
         })}
         <button
-          className="btn btn-secondary"
+          className="btnClean"
           onClick={() => {
             this.cleanCompleted()
           }}

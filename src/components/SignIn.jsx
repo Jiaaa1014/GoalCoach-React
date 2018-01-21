@@ -20,25 +20,23 @@ export default class SignIn extends Component {
     firebaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .catch(error => this.setState({ error: error.message }))
+      .catch(error => this.setState({ error }))
   }
   render() {
     return (
-      <div className="form-inline" style={{ margin: '5%' }}>
-        <h2>Sign In</h2>
-        <div className="form-group">
+      <div className="box" >
+        <h1>Sign In</h1>
+        <div className="form-group user">
           <input
             type="text"
-            className="form-control"
+            className="form-control user-typing"
             placeholder="email"
-            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ email: e.target.value })}
           />
           <input
             type="password"
-            className="form-control"
+            className="form-control user-typing"
             placeholder="password"
-            style={{ marginRight: '5px' }}
             onChange={e => this.setState({ password: e.target.value })}
             onKeyPress={(e) => {
               if (e.key === 'Enter') this.signIn()
@@ -46,16 +44,19 @@ export default class SignIn extends Component {
           />
           <button
             type="button"
-            className="btn btn-primary"
+            className="btnInUp"
             onClick={() => this.signIn()}
           >
             Sign In
           </button>
         </div>
         <div>{this.state.error.message}</div>
+        <hr />
         <div>
-          <Link to="/signup">Sign up instead</Link>
+          <div>New invistor?</div>
+          <Link to="/signup">Join us</Link>
         </div>
+        <hr />
       </div>
     )
   }

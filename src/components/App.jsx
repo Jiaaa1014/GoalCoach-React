@@ -11,17 +11,17 @@ class App extends Component {
   }
   render() {
     return (
-      <div style={{ margin: '5px' }}>
-        <h3>Goals</h3>
+      <div className="listbox">
+        <h2>Goals</h2>
         <AddGoal />
         <hr />
-        <h4>Goals to Be Done</h4>
+        <h3>Goals to Be Done</h3>
         <GoalList />
         <hr />
-        <h4>Already Completed</h4>
+        <h3>Already Completed</h3>
         <CompleteGoalList />
         <hr />
-        <button className="btn btn-danger" onClick={() => this.signOut()}>
+        <button className="btnOut" onClick={() => this.signOut()}>
           Sign out
         </button>
       </div>

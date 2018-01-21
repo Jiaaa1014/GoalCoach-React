@@ -21,13 +21,13 @@ class GoalItem extends Component {
     const { email, title } = this.props.goal
 
     return (
-      <div style={{ margin: '5px' }}>
+      <div>
         <strong>{`${title} `}</strong>
         <span>
           submitted by<em>{`－${email}`}</em>
         </span>
         <button
-          className="btn btn-primary btn-sm"
+          className="btnDone"
           onClick={() => this.completeGoal()}
         >
           Complete
