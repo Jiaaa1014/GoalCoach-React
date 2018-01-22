@@ -1,7 +1,10 @@
 @import './btn';
+
 body {
     background-color: #1C1C1C;
     color: #fff; // font-family: 'Architects Daughter', cursive;
+    height: 100vh
+
 }
 
 h1,
@@ -51,6 +54,16 @@ h1 {
     }
 }
 
+
+/* AddGoal */
+
+.add-item {
+    max-width: 50vh;
+}
+
+
+/* AddGoal */
+
 @media (max-width: 575px) {
     hr {
         display: none
@@ -84,15 +97,6 @@ h1 {
 /* App.jsx */
 
 
-/* AddGoal */
-
-.add-item {
-    width: 60%;
-    max-width: 900px;
-}
-
-
-/* AddGoal */
 
 
 /* GoalItem & CompleteGoalList*/

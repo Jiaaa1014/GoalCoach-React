@@ -21,7 +21,7 @@ class AddGoal extends Component {
   }
   render() {
     return (
-      <div className="form-inline">
+      <div>
         <div className="form-group add-item">
           <input
             type="text"

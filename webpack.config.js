@@ -4,8 +4,8 @@ module.exports = {
   entry: './src/index.js',
 
   output: {
-    path: path.resolve(`${__dirname}/webpackconDir`),
-    filename: 'build.js'
+    path: __dirname,
+    filename: 'bundle.js'
   },
 
   watch: true,

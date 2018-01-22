@@ -9470,35 +9470,36 @@ function remove(array, elem) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = logUser;
-/* harmony export (immutable) */ __webpack_exports__["c"] = setGoals;
-/* harmony export (immutable) */ __webpack_exports__["b"] = setCompleted;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return logUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return setGoals; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return setCompleted; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(50);
 
 
-function logUser(email) {
+var logUser = function logUser(email) {
   var actions = {
     type: __WEBPACK_IMPORTED_MODULE_0__constants__["c" /* SIGNED_IN */],
     email: email
   };
+  console.log(actions);
   return actions;
-}
+};
 
-function setGoals(goals) {
+var setGoals = function setGoals(goals) {
   var actions = {
     type: __WEBPACK_IMPORTED_MODULE_0__constants__["b" /* SET_GOALS */],
     goals: goals
   };
   return actions;
-}
+};
 
-function setCompleted(completeGoals) {
+var setCompleted = function setCompleted(completeGoals) {
   var actions = {
     type: __WEBPACK_IMPORTED_MODULE_0__constants__["a" /* SET_COMPLETED */],
     completeGoals: completeGoals
   };
   return actions;
-}
+};
 
 /***/ }),
 /* 77 */
@@ -53058,7 +53059,7 @@ var App = function (_Component) {
             },
             __self: this
           },
-          'Make a Goals'
+          'Make a Goals?'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__AddGoal__["a" /* default */], {
           __source: {
@@ -53205,7 +53206,8 @@ var AddGoal = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'form-inline', __source: {
+        {
+          __source: {
             fileName: _jsxFileName,
             lineNumber: 24
           },
@@ -54098,7 +54100,7 @@ exports = module.exports = __webpack_require__(300)(undefined);
 
 
 // module
-exports.push([module.i, ".btnInUp,\n.btnOut,\n.btnAdd,\n.btnDone,\n.btnClean {\n  background: none;\n  color: var(--color);\n  opacity: .7;\n  border: 3.5px solid;\n  border-radius: 6px;\n  font-weight: 700;\n  margin: 1.5rem;\n  padding: .5rem 3rem;\n  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);\n  transition: all .1s ease; }\n  .btnInUp:active,\n  .btnOut:active,\n  .btnAdd:active,\n  .btnDone:active,\n  .btnClean:active {\n    transform: translateY(0.2em);\n    box-shadow: inset 0em 0.1em 0.1em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);\n    color: var(--color);\n    opacity: 1; }\n\n.btnInUp {\n  padding: 1rem 10rem; }\n  @media (max-width: 576px) {\n    .btnInUp {\n      width: 100%; } }\n  .btnInUp:active {\n    box-shadow: inset 0em 0.1em .1em 0 #ffffff, 0 0.6em .5em -.7em #fff; }\n\n.btnDone {\n  padding: .1rem 2rem; }\n\n.btnOut {\n  --color: #f5ccca; }\n\n.btnInUp {\n  --color: #fff; }\n\n.btnAdd {\n  --color: #8fc866; }\n\n.btnDone {\n  --color: #3a7f91; }\n\n.btnClean {\n  --color: #e76d6d; }\n\nbody {\n  background-color: #1C1C1C;\n  color: #fff; }\n\nh1,\nh2 {\n  font-size: 4em;\n  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n  margin-bottom: 20px;\n  padding-bottom: 10px;\n  border-bottom: #999 solid 1px; }\n\nh1 {\n  border-bottom: none; }\n\n.box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 10% auto;\n  width: 80%; }\n  .box hr {\n    width: 100%;\n    border: 1px #fff solid; }\n  .box .err,\n  .box .in {\n    color: #eee;\n    margin: 5px;\n    text-align: center; }\n    .box .err a,\n    .box .in a {\n      font-size: 1em; }\n\n.user {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: auto;\n  width: 90%; }\n  .user .user-typing {\n    margin: 0.8rem;\n    max-width: 400px;\n    border-radius: 2%; }\n\n@media (max-width: 575px) {\n  hr {\n    display: none; }\n  .box {\n    margin-top: 5%;\n    width: 70%; }\n    .box .user {\n      width: 100%; }\n      .box .user .btnInOut {\n        width: 100%;\n        padding: 0px; }\n    .box .in div {\n      display: none; } }\n\n/* App.jsx */\n.listbox {\n  display: flex;\n  flex-direction: column;\n  margin: 5% 10%; }\n\n/* App.jsx */\n/* AddGoal */\n.add-item {\n  width: 60%;\n  max-width: 900px; }\n\n/* AddGoal */\n/* GoalItem & CompleteGoalList*/\n.item-name {\n  font: 800 3rem 'Marcellus SC', serif; }\n\n.item-who {\n  font: .7rem;\n  color: #999; }\n\n/* GoalItem & CompleteGoalList*/\n", ""]);
+exports.push([module.i, ".btnInUp,\n.btnOut,\n.btnAdd,\n.btnDone,\n.btnClean {\n  background: none;\n  color: var(--color);\n  opacity: .7;\n  border: 3.5px solid;\n  border-radius: 6px;\n  font-weight: 500;\n  margin: 1.5rem;\n  padding: .5rem 3rem;\n  box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);\n  transition: all .1s ease; }\n  .btnInUp:active,\n  .btnOut:active,\n  .btnAdd:active,\n  .btnDone:active,\n  .btnClean:active {\n    transform: translateY(0.2em);\n    box-shadow: inset 0em 0.1em 0.1em 0 var(--color), 0 0.6em 0.5em -0.7em var(--color);\n    color: var(--color);\n    opacity: 1; }\n\n.btnInUp {\n  padding: 1rem 10rem; }\n  @media (max-width: 576px) {\n    .btnInUp {\n      width: 100%; } }\n  .btnInUp:active {\n    box-shadow: inset 0em 0.1em .1em 0 #ffffff, 0 0.6em .5em -.7em #fff; }\n\n.btnDone {\n  padding: .1rem 2rem; }\n\n.btnAdd, .btnClean {\n  margin-left: 0; }\n\n.btnOut {\n  --color: #f5ccca; }\n\n.btnInUp {\n  --color: #fff; }\n\n.btnAdd {\n  --color: #8fc866; }\n\n.btnDone {\n  --color: #3a7f91; }\n\n.btnClean {\n  --color: #e76d6d; }\n\nbody {\n  background-color: #1C1C1C;\n  color: #fff;\n  height: 100vh; }\n\nh1,\nh2 {\n  font-size: 4em;\n  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n  margin-bottom: 20px;\n  padding-bottom: 10px;\n  border-bottom: #999 solid 1px; }\n\nh1 {\n  border-bottom: none; }\n\n.box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 10% auto;\n  width: 80%; }\n  .box hr {\n    width: 100%;\n    border: 1px #fff solid; }\n  .box .err,\n  .box .in {\n    color: #eee;\n    margin: 5px;\n    text-align: center; }\n    .box .err a,\n    .box .in a {\n      font-size: 1em; }\n\n.user {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: auto;\n  width: 90%; }\n  .user .user-typing {\n    margin: 0.8rem;\n    max-width: 400px;\n    border-radius: 2%; }\n\n/* AddGoal */\n.add-item {\n  max-width: 50vh; }\n\n/* AddGoal */\n@media (max-width: 575px) {\n  hr {\n    display: none; }\n  .box {\n    margin-top: 5%;\n    width: 70%; }\n    .box .user {\n      width: 100%; }\n      .box .user .btnInOut {\n        width: 100%;\n        padding: 0px; }\n    .box .in div {\n      display: none; } }\n\n/* App.jsx */\n.listbox {\n  display: flex;\n  flex-direction: column;\n  margin: 5% 10%; }\n\n/* App.jsx */\n/* GoalItem & CompleteGoalList*/\n.item-name {\n  font: 800 3rem 'Marcellus SC', serif; }\n\n.item-who {\n  font: .7rem;\n  color: #999; }\n\n/* GoalItem & CompleteGoalList*/\n", ""]);
 
 // exports
 

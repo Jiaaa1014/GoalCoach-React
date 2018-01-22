@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="listbox">
-        <h1>Make a Goals</h1>
+        <h1>Make a Goals?</h1>
         <AddGoal />
         <hr />
         <h2>Hey, Finish it!</h2>

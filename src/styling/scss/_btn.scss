@@ -8,7 +8,7 @@
     opacity: .7;
     border: 3.5px solid;
     border-radius: 6px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 1.5rem;
     padding: .5rem 3rem;
     box-shadow: 0 .5em 1em -.3em rgba(#fff, .3);
@@ -33,6 +33,9 @@
 
 .btnDone {
     padding: .1rem 2rem
+}
+.btnAdd,.btnClean {
+    margin-left: 0
 }
 
 $colors:(btnOut: #f5ccca, btnInUp: #fff, btnAdd: #8fc866, btnDone: #3a7f91, btnClean:#e76d6d);

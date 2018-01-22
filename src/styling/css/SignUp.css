@@ -8,7 +8,7 @@
   opacity: .7;
   border: 3.5px solid;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 1.5rem;
   padding: .5rem 3rem;
   box-shadow: 0 0.5em 1em -0.3em rgba(255, 255, 255, 0.3);
@@ -34,6 +34,9 @@
 .btnDone {
   padding: .1rem 2rem; }
 
+.btnAdd, .btnClean {
+  margin-left: 0; }
+
 .btnOut {
   --color: #f5ccca; }
 
@@ -51,7 +54,8 @@
 
 body {
   background-color: #1C1C1C;
-  color: #fff; }
+  color: #fff;
+  height: 100vh; }
 
 h1,
 h2 {
@@ -93,6 +97,11 @@ h1 {
     max-width: 400px;
     border-radius: 2%; }
 
+/* AddGoal */
+.add-item {
+  max-width: 50vh; }
+
+/* AddGoal */
 @media (max-width: 575px) {
   hr {
     display: none; }
@@ -114,12 +123,6 @@ h1 {
   margin: 5% 10%; }
 
 /* App.jsx */
-/* AddGoal */
-.add-item {
-  width: 60%;
-  max-width: 900px; }
-
-/* AddGoal */
 /* GoalItem & CompleteGoalList*/
 .item-name {
   font: 800 3rem 'Marcellus SC', serif; }

@@ -1,14 +1,15 @@
 import { SIGNED_IN, SET_GOALS, SET_COMPLETED } from '../constants'
 
-export function logUser(email) {
+export const logUser = (email) => {
   const actions = {
     type: SIGNED_IN,
     email
   }
+  console.log(actions)
   return actions
 }
 
-export function setGoals(goals) {
+export const setGoals = (goals) => {
   const actions = {
     type: SET_GOALS,
     goals
@@ -16,7 +17,7 @@ export function setGoals(goals) {
   return actions
 }
 
-export function setCompleted(completeGoals) {
+export const setCompleted = (completeGoals) => {
   const actions = {
     type: SET_COMPLETED,
     completeGoals
