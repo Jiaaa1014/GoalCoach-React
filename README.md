@@ -117,18 +117,3 @@ and add these two variables
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 ```
-
----
-
-How to let .scss work?
-```shell
-$ npm i sass-loader node-sass -S
-```
-`webpack.config.js`
-```js
-{
-  test: /\.scss$/,
-  loader: 'style-loader!css-loader!sass-loader'
-}
-```
-webpack successfully works but the page is still numb?

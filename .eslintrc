@@ -4,10 +4,14 @@
     "browser": true,
     "node": true
   },
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "react-app"
+  ],
   "plugins": [
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
+    "import"
   ],
   "rules": {
     "semi": [
@@ -19,7 +23,7 @@
       "never"
     ],
     "comma-dangle": [
-      "error",
+      2,
       "never"
     ],
     "no-console": 0,
