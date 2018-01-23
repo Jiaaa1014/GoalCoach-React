@@ -28,8 +28,8 @@
     ],
     "no-console": 0,
     "class-methods-use-this": 0,
-    "react/jsx-uses-vars": "error",
-    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": 2,
+    "react/jsx-uses-react": 2,
     "react/no-array-index-key": 0,
     "react/require-default-props": 0,
     "react/jsx-filename-extension": [
@@ -41,8 +41,9 @@
         ]
       }
     ],
+    "jsx-a11y/href-no-hash": 0,
     "jsx-a11y/anchor-is-valid": [
-      "off",
+      0,
       {
         "components": [
           "Link"

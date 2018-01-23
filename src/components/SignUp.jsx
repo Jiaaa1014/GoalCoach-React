@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { firebaseApp } from '../firebase'
-import '../styling/css/SignUp.css'
 
 export default class SignUp extends Component {
   constructor(props) {

@@ -11,6 +11,8 @@ import reducer from './reducers'
 import App from './components/App'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import './styling/css/root.css'
+
 
 const store = createStore(reducer)
 

@@ -29,7 +29,4 @@ class App extends Component {
   }
 }
 
-// function mapStateToProps() {
-//   return {}
-// }
 export default App
