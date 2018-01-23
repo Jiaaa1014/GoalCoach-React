@@ -8946,7 +8946,7 @@ var RepoManager = /** @class */ (function () {
         if (dbUrl === undefined) {
             util_2.fatal("Can't determine Firebase Database URL.  Be sure to include " +
                 DATABASE_URL_OPTION +
-                ' option when calling firebase.initializeApp().');
+                ' option when calling firebase.intializeApp().');
         }
         var parsedUrl = parser_1.parseRepoInfo(dbUrl);
         var repoInfo = parsedUrl.repoInfo;
@@ -41715,7 +41715,7 @@ function createFirebaseNamespace() {
         app: app,
         apps: null,
         Promise: Promise,
-        SDK_VERSION: '4.9.0',
+        SDK_VERSION: '4.8.1',
         INTERNAL: {
             registerService: registerService,
             createFirebaseNamespace: createFirebaseNamespace,
