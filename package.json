@@ -26,7 +26,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "watch": "concurrently --killer-others \" node-sass --watch ./src/styling/scss/root.scss ./src/styling/css/root.css\" \"webpack --watch\" "
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -36,6 +37,7 @@
     "babel-preset-react-app": "^3.1.0",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "concurrently": "^3.5.1",
     "css-loader": "0.28.7",
     "eslint": "4.10.0",
     "eslint-config-airbnb": "^16.1.0",

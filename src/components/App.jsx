@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
 import { firebaseApp } from '../firebase'
 import AddGoal from './AddGoal'
 import GoalList from './GoalList'

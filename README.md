@@ -107,7 +107,7 @@ signUp() {
 
 After `npm run eject`, there's bunch of dependencies show up. 
 
-When using `webpack` I got the error about 
+When using `webpack` then I got the error: 
 ```
 Module build failed: Error: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. 
 ```
@@ -117,3 +117,16 @@ and add these two variables
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 ```
+
+
+## Simultaneously commands
+
+```sh
+npm i concurrently -D
+```
+Go to `package.json` - `scripts` and set 
+```js
+ "watch": "concurrently --killer-others \" node-sass --watch ./src/styling/scss/root.scss ./src/styling/css/root.css\" \"webpack --watch\""
+ ```
+
+`node-sass` must go first.

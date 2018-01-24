@@ -53020,7 +53020,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-// import { connect } from 'react-redux'
 
 
 
@@ -53049,7 +53048,7 @@ var App = function (_Component) {
         'div',
         { className: 'listbox', __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 13
           },
           __self: this
         },
@@ -53058,7 +53057,7 @@ var App = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 15
+              lineNumber: 14
             },
             __self: this
           },
@@ -53067,14 +53066,14 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__AddGoal__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 15
           },
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 16
           },
           __self: this
         }),
@@ -53083,7 +53082,7 @@ var App = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18
+              lineNumber: 17
             },
             __self: this
           },
@@ -53092,14 +53091,14 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__GoalList__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 18
           },
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 19
           },
           __self: this
         }),
@@ -53108,7 +53107,7 @@ var App = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 20
             },
             __self: this
           },
@@ -53117,14 +53116,14 @@ var App = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__CompleteGoalList__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 21
           },
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 22
           },
           __self: this
         }),
@@ -53134,7 +53133,7 @@ var App = function (_Component) {
               return _this2.signOut();
             }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 24
+              lineNumber: 23
             },
             __self: this
           },
