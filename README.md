@@ -10,7 +10,7 @@
 2. Right click and choose the `Git Bash` at the project directory
 
 ## Notes
-###### firebase.js
+###### index.js
 ```js
 firebaseApp.auth().onAuthStateChanged(user => {
   if (user) {
