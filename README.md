@@ -1,16 +1,9 @@
-# Steps
-1. Download ZIP and unzip it
-2. Open cmd 
-```bash
-> cd GoalCoach-React
-> npm install
-> npm start
-```
-###### or
-2. Right click and choose the `Git Bash` at the project directory
 
-## Notes
-###### index.js
+### Notes
+
+#### firbase操作
+
+##### 確認user及路由設定(index.js)
 ```js
 firebaseApp.auth().onAuthStateChanged(user => {
   if (user) {
@@ -20,7 +13,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
   } 
   else browserHistory.replace("/signin");
 });
-  ```
+```
 ```js
 <Router path="/" history={browserHistory}>
   <Route path="/app" component={App} />
@@ -28,29 +21,29 @@ firebaseApp.auth().onAuthStateChanged(user => {
   <Route path="/signup" component={SignUp} />
 </Router>
 ```
-###### reducers/index.js
+##### reducers/index.js
 ```js*
 export default combineReducers({})
 ```
 
-###### goalRef applied
-1. Add a goal
+##### firebase的`ref`互動
+1. 新增目標
 ```js
 // AddGoal.jsx
 goalRef.push({ email, title }); 
 ```
-2. If goal done, remove from goalRef, and add to completedGoalRef
+2. 目標完成，從待完成清單移除，轉移到已完成清單
 ```js
 // GoalItem.jsx
 goalRef.child(serverKey).remove(); 
 completeGoalRef.push({ email, title });
 ```
-3. Clean all goals
+3. 已完成清單清空
 ```js
 // CompleteGoalList.jsx
 completeGoalRef.set({});
 ```
-4. Pull the goal items from firebase
+4. 從firebase抓下來做render()
 ```js
 // GoalList.jsx
 componentDidMount() {
@@ -65,7 +58,7 @@ componentDidMount() {
   });
 }
 ```
-5. if completed things, do the same way as pre step. 
+5. 跟第四步驟一樣
 ```js
 // CompleteGoalList.jsx
 componentDidMount() {
@@ -80,7 +73,8 @@ componentDidMount() {
   });
 }
 ```
-
+##### 登入註冊操作
+登入
 ```js
 // SignIn.jsx
 signIn() {
@@ -91,6 +85,7 @@ signIn() {
     .catch(error => this.setState({ error: error.message }))
 }
 ```
+註冊
 ```js
 // SignUp.jsx
 signUp() {
@@ -103,28 +98,30 @@ signUp() {
 ```
 
 
-## Bug Fixed
+#### Bug Fixed
 
-After `npm run eject`, there's bunch of dependencies show up. 
+跑了`npm run eject`之後，爆出一堆看不懂的dependencies以及指令
 
-When using `webpack` then I got the error: 
+使用`webpack`時得到的錯誤訊息
 ```
 Module build failed: Error: Using `babel-preset-react-app` requires that you specify `NODE_ENV` or `BABEL_ENV` environment variables. 
 ```
-Go to the \node_modules\babel-preset-react-app\index.js"
-and add these two variables
+前往`./node_modules/babel-preset-react-app/index.js`加入兩個變數
+
+> I dont know why but it works.
+
 ```js
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 ```
 
 
-## Simultaneously commands
+#### 腳本同步執行的方式
 
-```sh
-npm i concurrently -D
+```bash
+$ npm i concurrently -D
 ```
-Go to `package.json` - `scripts` and set 
+前往`package.json`設定腳本(scripts)
 ```js
  "watch": "concurrently --killer-others \" node-sass --watch ./src/styling/scss/root.scss ./src/styling/css/root.css\" \"webpack --watch\""
  ```
